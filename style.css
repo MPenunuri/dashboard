@@ -28,15 +28,15 @@ time, mark, audio, video {
 .dashboard, header, .headerTop, .headerBottom, .inputContainer, .headerTopOtherElements,
 .greetingBox, .grettingBoxTextContainer, .headerButtons, .dataContainer,.asidesContainer,
 .announcementsGeneralContainer, .announcementsContainer, .announcementContainer,
-.profilesContainer, .profileContainer, .profileText, .projectsGridContainer,
-.projectContainer, .projectButtons{
+.profilesGeneralContainer, .profilesContainer, .profileContainer, .profileText, 
+.projectsGridContainer,.projectContainer, .projectButtons{
     display: flex;
 }
 
 .sidebar, .sidebarButtons, .dashboard, header, 
 .grettingBoxTextContainer, .asidesContainer,
 .announcementsGeneralContainer, .announcementsContainer, .announcementContainer,
-.profilesContainer, .profileText,
+.profilesGeneralContainer, .profilesContainer, .profileText,
 .projectsGridContainer, .projectContainer {
     flex-direction: column;
 }
@@ -46,7 +46,7 @@ time, mark, audio, video {
 }
 
 .projectsGridContainer{
-    width: 80%;
+    width: 70%;
     flex-shrink: 0;
     gap: 10px;
 }
@@ -54,23 +54,25 @@ time, mark, audio, video {
 h2{
     font-weight: 600;
     font-size: 1rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .projectsGrid{
     padding-right: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
     gap: 1rem;
 }
 
 .sidebar{
-    width: 600px;
+    width: 50%;
     align-items: flex-start;
     padding-left: 20px;
     padding-top: 10px;
     background-color: rgb(41, 41, 149);
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     gap: 1rem;
     box-shadow: 6px 0px 5px rgb(0, 0, 0,.6);
     position: relative;
@@ -82,7 +84,7 @@ h2{
 }
 
 .menuIcon{
-    font-size: 3rem;
+    font-size: 3.5vw;
 }
 
 .sidebarButtonContainer{
@@ -100,7 +102,7 @@ h2{
 
 .sidebarButtons{
     margin-top: 60px;
-    gap: 20px;
+    gap: 1rem;
     position: fixed;
 }
 
@@ -114,9 +116,9 @@ header{
     margin-left: -20px;
     margin-bottom: 20px;
     padding-left: 20px;
-    padding-bottom: 20px;
-    gap: 30px;
-    box-shadow: 0px 6px 5px rgb(0, 0, 0,.3);
+    padding-bottom: 10px;
+    gap: 1rem;
+    box-shadow: 0px 4px 5px rgb(0, 0, 0,.3);
 }
 
 .headerTop, .headerBottom{
@@ -124,7 +126,7 @@ header{
 }
 
 .headerTop{
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
 .inputContainer{
@@ -132,7 +134,7 @@ header{
     justify-content: space-around;
     align-items: center;
     flex-shrink: 0;
-    gap: 10px;
+    gap: .5rem;
     font-size: 2rem;
 }
 
@@ -151,9 +153,10 @@ header{
 }
 
 .headerTopOtherElements{
+    margin-right: .5rem;
     justify-content: space-around;
     align-items: center;
-    gap: 10px;
+    gap: .5rem;
 }
 
 .headerTopOtherElements>ion-icon{
@@ -165,6 +168,46 @@ header{
     background-color: rgba(211, 202, 202, 0.3);
     padding: 2px;
     cursor: pointer;
+}
+
+.headerBottom{
+    justify-content: space-between;
+}
+
+.greetingBox{
+    gap: .5rem;
+    align-items: center;
+    margin-left: 3%;
+    font-weight: 600;
+}
+
+.personIcon{
+    font-size: 3rem;
+    color: rgb(41, 41, 149);
+}
+
+.headerButtons{
+    margin-right: 3%;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.headerButton{
+    background-color: rgb(41, 41, 149);
+    color: white;
+    font-weight: 600;
+    font-family: 'Montserrat',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px;
+    border-style: solid;
+}
+
+.headerButton:hover{
+    background-color: white;
+    border-color: rgb(41, 41, 149);
+    color: rgb(41, 41, 149);
 }
 
 .projectContainer{
@@ -203,4 +246,152 @@ button:hover{
 .projectButtons{
     justify-content: flex-end;
     gap: 10px;
+}
+
+.announcementsContainer, .profilesContainer{
+    background-color: white;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 5px rgb(0, 0, 0,.3);
+    gap: 10px;
+    font-size: .9rem;
+    align-items: center;
+}
+
+.announcementContainer:nth-child(n+2){
+    padding-top: 10px;
+    border-top: 1px;
+    border-style: dotted;
+    border-color: black;
+}
+
+.announcementName, .profileName{
+    font-weight: 600;
+}
+
+.profileIcon{
+    font-size: 2rem;
+    padding-right: 10px;
+}
+
+
+@media (max-width: 1054px) {
+    .sidebar{
+        font-size: 1.5vw;
+    }
+    .dataContainer{
+        flex-direction: column;
+    }
+    .asidesContainer{
+        flex-direction: row;
+    }
+}
+
+
+@media (max-width: 950px) {
+    .asidesContainer{
+        flex-direction: column;
+        width: 70%;
+    }
+}
+
+
+@media (max-width: 780px) {
+    .generalContainer{
+        flex-direction: column;
+    }
+
+    .sidebar{
+        flex-direction: row;
+    }
+
+    .sidebar{
+        width: 100vw;
+        align-items: center;
+        justify-content: space-around;
+        padding: 1rem;
+        font-size: 3.5vw;
+        gap: .3rem;
+        box-shadow: 6px 0px 5px rgb(0, 0, 0,.6);
+        position:fixed;
+    }
+
+    .sidebarButtonContainer{
+        font-weight: 600;
+        position: static;
+        flex-shrink: 1;
+    }
+
+    .sidebarButtons{
+        flex-shrink: 0;
+        margin-right: .5rem;
+        flex-direction: row;
+        margin-top: 0px;
+        gap: 1rem;
+        position: static;
+    }
+
+    .buttonContainer > p{
+        display: none;
+    }
+
+    .dashboard{
+        position: static;
+        margin-top: 8%;
+        align-items: center;
+    }
+
+    header{
+        width: 100vw;
+    }
+
+    .asidesContainer, .projectsGridContainer{
+        margin-left: 15vw;
+        align-items: center;
+    }
+
+    .announcementsGeneralContainer, .profilesGeneralContainer{
+        align-items: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .sidebar{
+        font-size: 5vw;
+        gap: .1rem;
+        margin-bottom: 0;
+    }
+
+    .sidebarButtonContainer{
+        display: none;
+    }
+
+    .dashboard{
+        margin-top: 12%;
+    }
+
+    .headerTop, .headerBottom{
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .headerTopOtherElements{
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .headerTopOtherElements > p{
+        display: none;
+    }
+
+    .greetingBox, .headerButtons{
+        justify-content: center;
+    }
+
+    .inputContainer{
+        width: 100%;
+        margin-left: 10vw;
+    }
 }
